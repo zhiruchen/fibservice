@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package fibpb;
+
+service fibg {
+  // GetFibNRecur 递归获取第n个斐波那契数
+  rpc GetFibNRecur(GetFibNRecurReq) returns (GetFibNRecurRes) {}
+  // GetFibNIter 迭代获取第n个斐波那契数
+  rpc GetFibNIter(GetFibNIterReq) returns (GetFibNIterRes) {}
+}
+
+message GetFibNRecurReq {
+  int32 num = 1;
+}
+
+message GetFibNRecurRes {
+  repeated int32 fib_nums = 1;
+}
+
+message GetFibNIterReq {
+  int32 num = 1;
+}
+
+message GetFibNIterRes {
+  repeated int32 fib_nums = 1;
+}

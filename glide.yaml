@@ -1,0 +1,27 @@
+package: github.com/zhiruchen/fibservice
+import:
+- package: github.com/gogo/protobuf
+  version: ^1.0.0
+  subpackages:
+  - proto
+- package: golang.org/x/net
+  repo: https://github.com/golang/net
+  version: 9ef9f5bb98a1fdc41f8cf6c250a4404b4085e389
+  subpackages:
+    - context
+    - http2
+    - trace
+- package: google.golang.org/grpc
+  version: ^1.12.0
+  repo: https://github.com/grpc/grpc-go
+- package: google.golang.org/genproto
+  repo: https://github.com/google/go-genproto
+  version: 694d95ba50e67b2e363f3483057db5d4910c18f9
+  subpackages:
+    - googleapis
+- package: golang.org/x/text
+  version: 5c1cf69b5978e5a34c5f9ba09a83e56acc4b7877
+  repo: https://github.com/golang/text
+  subpackages:
+    - secure
+    - unicode

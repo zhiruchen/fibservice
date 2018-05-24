@@ -1,0 +1,9 @@
+protoc_include_wkt: true
+gen:
+  go_options:
+    import_path: github.com/zhiruchen/fibservice/fibpb
+  plugins:
+    - name: gogofast 
+      type: gogo
+      flags: plugins=grpc
+      output: .
