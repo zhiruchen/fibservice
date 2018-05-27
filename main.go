@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"log"
 	"net"
 
@@ -12,7 +13,14 @@ import (
 )
 
 func main() {
-	lis, err := net.Listen("tcp", ":8898")
+	port := flag.String("p", ":8898", "listen port")
+	flag.Parse()
+
+	if *port == "" {
+		log.Fatalln("port is empty")
+	}
+
+	lis, err := net.Listen("tcp", *port)
 	if err != nil {
 		log.Printf("listen error: %v\n", err)
 		return

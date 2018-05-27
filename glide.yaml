@@ -25,3 +25,8 @@ import:
   subpackages:
     - secure
     - unicode
+- package: github.com/golang/protobuf
+  version: ^1.1.0
+  repo: https://github.com/golang/protobuf
+  subpackages:
+    - proto
