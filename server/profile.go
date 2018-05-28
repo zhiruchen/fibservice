@@ -9,7 +9,7 @@ import (
 
 func ProfileHandlers() *gin.Engine {
 	e := gin.Default()
-    e.GET("/", func(context *gin.Context) {
+	e.GET("/", func(context *gin.Context) {
 		context.Redirect(301, context.Request.RequestURI+"/pprof")
 	})
 
