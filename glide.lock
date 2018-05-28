@@ -1,6 +1,13 @@
-hash: 34fcb9215e9b6daf24f30fd166cc9440b711d607ea517e8c269ae667389e0214
-updated: 2018-05-27T15:12:47.114084+08:00
+hash: 47aa1347cebe3d810eacdbc55c23713fee44d73a397af2e010c157e8746e6c22
+updated: 2018-05-28T17:25:31.344365+08:00
 imports:
+- name: github.com/gin-contrib/sse
+  version: 22d885f9ecc78bf4ee5d72b937e4bbcdc58e8cae
+- name: github.com/gin-gonic/gin
+  version: d459835d2b077e44f7c9b453505ee29881d5d12d
+  subpackages:
+  - binding
+  - render
 - name: github.com/gogo/protobuf
   version: 1adfc126b41513cc696b209667c8656ea7aac67c
   subpackages:
@@ -15,6 +22,12 @@ imports:
   - ptypes/any
   - ptypes/duration
   - ptypes/timestamp
+- name: github.com/mattn/go-isatty
+  version: 6ca4dbf54d38eea1a992b3c722a76a5d1c4cb25c
+- name: github.com/ugorji/go
+  version: f3cacc17c85ecb7f1b6a9e373ee85d1480919868
+  subpackages:
+  - codec
 - name: golang.org/x/net
   version: 9ef9f5bb98a1fdc41f8cf6c250a4404b4085e389
   repo: https://github.com/golang/net
@@ -26,6 +39,10 @@ imports:
   - idna
   - internal/timeseries
   - trace
+- name: golang.org/x/sys
+  version: 7c87d13f8e835d2fb3a70a2912c811ed0c1d241b
+  subpackages:
+  - unix
 - name: golang.org/x/text
   version: 5c1cf69b5978e5a34c5f9ba09a83e56acc4b7877
   repo: https://github.com/golang/text
@@ -71,4 +88,10 @@ imports:
   - status
   - tap
   - transport
+- name: gopkg.in/go-playground/validator.v8
+  version: 5f1438d3fca68893a817e4a66806cea46a9e4ebf
+  repo: https://github.com/go-playground/validator.git
+- name: gopkg.in/yaml.v2
+  version: d670f9405373e636a5a2765eea47fac0c9bc91a4
+  repo: https://github.com/go-yaml/yaml
 testImports: []

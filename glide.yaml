@@ -30,3 +30,11 @@ import:
   repo: https://github.com/golang/protobuf
   subpackages:
     - proto
+- package: github.com/gin-gonic/gin
+  version: ^1.2.0
+- package: gopkg.in/go-playground/validator.v8
+  version: 5f1438d3fca68893a817e4a66806cea46a9e4ebf
+  repo: https://github.com/go-playground/validator.git
+- package: gopkg.in/yaml.v2
+  version: d670f9405373e636a5a2765eea47fac0c9bc91a4
+  repo: https://github.com/go-yaml/yaml

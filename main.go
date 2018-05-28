@@ -14,11 +14,14 @@ import (
 
 func main() {
 	port := flag.String("p", ":8898", "listen port")
+	pport := flag.String("pp", ":8899", "profile port")
 	flag.Parse()
 
-	if *port == "" {
-		log.Fatalln("port is empty")
+	if *port == "" || *pport == "" {
+		log.Fatalln("listen port/profile port is empty")
 	}
+
+	server.LoadProfileServer(*pport)
 
 	lis, err := net.Listen("tcp", *port)
 	if err != nil {
