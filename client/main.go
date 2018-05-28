@@ -3,11 +3,11 @@ package main
 import (
 	"context"
 	"log"
+	"time"
 
 	"google.golang.org/grpc"
 
 	pb "github.com/zhiruchen/fibservice/fibpb"
-	"time"
 )
 
 func main() {
