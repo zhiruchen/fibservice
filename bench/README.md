@@ -102,9 +102,13 @@ ROUTINE ======================== github.com/zhiruchen/fibservice/server.fibRecur
 从cpu profile(` top10 -cum`)中看到除了grpc server的几个方法，server.(*FibServer).GetFibNRecur是耗时最多的一个handler。
 
 `list GetFibNRecur` 通过这个命令定位到cpu主要消耗在`srv.(FibgServer).GetFibNRecur(ctx, in)`方法上。
-`list fibRecur` 定位是递归调用自己耗时最多。递归当时很慢。
+`list fibRecur` 定位是递归调用自己耗时最多。递归自然是很慢。
 
-# heap profile
+## heap profile
+
+```shell
+go test -run=^$ -bench=. -memprofile=mem0.out
+```
 
 ```shell
 go tool pprof --alloc_space server.test mem0.out
