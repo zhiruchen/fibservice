@@ -3,7 +3,6 @@ package main
 import (
 	"context"
 	"log"
-	"time"
 
 	"google.golang.org/grpc"
 
@@ -22,14 +21,10 @@ func main() {
 
 	c := pb.NewFibgClient(conn)
 
-	s := time.Now()
-	iteratorRes, err := c.GetFibNIter(ctx, &pb.GetFibNIterReq{Num: 15})
-	e := time.Now()
-
-	log.Println("time: ", e.Sub(s).Seconds(), iteratorRes.FibNums, err)
-
-	s = time.Now()
-	recurRes, err := c.GetFibNRecur(ctx, &pb.GetFibNRecurReq{Num: 15})
-	e = time.Now()
-	log.Println("time: ", e.Sub(s).Seconds(), recurRes.FibNums, err)
+	for i := 1; i <= 10000; i++ {
+		iteratorRes, err := c.GetFibNIter(ctx, &pb.GetFibNIterReq{Num: 25})
+		log.Println(iteratorRes.FibNums, err)
+		recurRes, err := c.GetFibNRecur(ctx, &pb.GetFibNRecurReq{Num: 25})
+		log.Println(recurRes.FibNums, err)
+	}
 }

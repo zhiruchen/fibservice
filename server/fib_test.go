@@ -132,3 +132,19 @@ func TestServerGetFibNIter(t *testing.T) {
 		}
 	}
 }
+
+func BenchmarkServerGetFibNRecur(b *testing.B) {
+	s := &FibServer{}
+	ctx := context.Background()
+	for i := 0; i < b.N; i++ {
+		s.GetFibNRecur(ctx, &pb.GetFibNRecurReq{Num: 20})
+	}
+}
+
+func BenchmarkServerGetFibNIter(b *testing.B) {
+	s := &FibServer{}
+	ctx := context.Background()
+	for i := 0; i < b.N; i++ {
+		s.GetFibNIter(ctx, &pb.GetFibNIterReq{Num: 20})
+	}
+}
